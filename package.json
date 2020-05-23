@@ -6,7 +6,9 @@
   },
   "main": "./build/ganache-core.node.cli.js",
   "scripts": {
+    "update": "npm update ganache-core",
     "start": "node cli.js",
+    "start-fork": "node cli.js --fork https://mainnet.infura.io/v3/9f47dabfca244ac6929d530866ebba99  -m 'luxury visual dentist trumpet banana immune that charge baby board finger pet'",
     "build": "webpack-cli --config ./webpack/webpack.node.config.js",
     "docker": "docker build -t trufflesuite/ganache-cli . && docker run -p 8545:8545 trufflesuite/ganache-cli",
     "otp": "node ./scripts/generate-otp.js",

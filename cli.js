@@ -105,6 +105,16 @@ var options = {
 
 var server = ganache.server(options);
 
+console.log("=========================================================");
+console.log("Godmode Ganache v0.0.1");
+console.log("");
+console.log(" by Martinet Lee");
+console.log(" for ETHGlobal Hack The Money ");
+console.log("");
+console.log("=========================================================");
+console.log("");
+console.log("Based on: ");
+
 console.log(detailedVersion);
 
 let started = false;
