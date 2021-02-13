@@ -1,30 +1,35 @@
 version: 0.2
 
+env:
+  parameter-store:
+    AWS_ACCOUNT_ID: account_id
 phases:
   install:
     runtime-versions:
-      docker: 19
-  pre-build:
+      docker: 18
+  pre_build:
     commands:
       - echo Logging into Amazon ECR
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=284217827608.dkr.ecr.us-east-1.amazonaws.com/godmode-ganache-cli:latest
+      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/godmode-ganache-cli
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - echo Commit Hash is $COMMIT_HASH
       - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - echo Image Tag is $IMAGE_TAG
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
-  post-build:
+  post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image(s)...
+      - echo Pushing the Docker image...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"hello-world","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"godmode-ganache-cli","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
