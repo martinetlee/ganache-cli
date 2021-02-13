@@ -1,5 +1,6 @@
 ```diff
-### This is a DevOps ephemeral branch for configuring the CI/CD in AWS. There are no new features or code. Nothing to see here. To use GodMode-Ganache-CLI, the Develop branch is where you want to be
+### This is a DevOps ephemeral branch for configuring the CI/CD in AWS. There are no new features or code. 
+Nothing to see here. To use GodMode-Ganache-CLI, the Develop branch is where you want to be
 ```
 
 
