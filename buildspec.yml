@@ -1,5 +1,8 @@
 version: 0.2
 
+env:
+  parameter-store:
+    AWS_ACCOUNT_ID: account_id
 phases:
   install:
     runtime-versions:
@@ -9,7 +12,7 @@ phases:
       - echo Logging into Amazon ECR
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=284217827608.dkr.ecr.us-east-1.amazonaws.com/godmode-ganache-cli
+      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/godmode-ganache-cli
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - echo Commit Hash is $COMMIT_HASH
       - IMAGE_TAG=${COMMIT_HASH:=latest}
