@@ -11,7 +11,9 @@ phases:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - REPOSITORY_URI=284217827608.dkr.ecr.us-east-1.amazonaws.com/godmode-ganache-cli
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - echo Commit Hash is $COMMIT_HASH
       - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - echo Image Tag is $IMAGE_TAG
   build:
     commands:
       - echo Build started on `date`
