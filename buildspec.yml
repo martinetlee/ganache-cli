@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       docker: 19
-  pre-build:
+  pre_build:
     commands:
       - echo Logging into Amazon ECR
       - aws --version
@@ -18,7 +18,7 @@ phases:
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
-  post-build:
+  post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image(s)...
