@@ -7,7 +7,7 @@
 	},
 	"main": "./build/ganache-core.node.cli.js",
 	"scripts": {
-		"update": "npm update godmode-ganache-core",
+		"update": "npm update ganache-core",
 		"start": "node cli.js",
 		"start-fork": "node cli.js --fork https://mainnet.infura.io/v3/[yourInfuraKey]  -m 'luxury visual dentist trumpet banana immune that charge baby board finger pet' -u '0xb7f993e0b314148e02c105badb12b02b1143e704'",
 		"build": "webpack-cli --config ./webpack/webpack.node.config.js",
