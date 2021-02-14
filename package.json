@@ -27,7 +27,7 @@
 	],
 	"devDependencies": {
 		"@semantic-release/git": "^9.0.0",
-		"ganache-core": "https://github.com/xGodMode/godmode-ganache-core",
+		"ganache-core": "git+https://github.com/xGodMode/godmode-ganache-core.git",
 		"node-loader": "^0.6.0",
 		"notp": "2.0.3",
 		"on-build-webpack": "^0.1.0",
