@@ -1,12 +1,12 @@
 {
-	"name": "ganache-cli",
+	"name": "godmode-ganache-cli",
 	"version": "6.12.1",
 	"bin": {
 		"ganache-cli": "cli.js"
 	},
 	"main": "./build/ganache-core.node.cli.js",
 	"scripts": {
-		"update": "npm update ganache-core",
+		"update": "npm update godmode-ganache-core",
 		"start": "node cli.js",
 		"start-fork": "node cli.js --fork https://mainnet.infura.io/v3/[yourInfuraKey]  -m 'luxury visual dentist trumpet banana immune that charge baby board finger pet' -u '0xb7f993e0b314148e02c105badb12b02b1143e704'",
 		"build": "webpack-cli --config ./webpack/webpack.node.config.js",
@@ -26,7 +26,7 @@
 	],
 	"devDependencies": {
 		"@semantic-release/git": "^9.0.0",
-		"ganache-core": "https://github.com/martinetlee/ganache-core#godmode",
+		"ganache-core": "https://github.com/xGodMode/godmode-ganache-core",
 		"node-loader": "^0.6.0",
 		"notp": "2.0.3",
 		"on-build-webpack": "^0.1.0",
@@ -39,7 +39,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/trufflesuite/ganache-cli"
+		"url": "https://github.com/xGodMode/godmode-ganache-cli"
 	},
 	"license": "MIT",
 	"release": {
