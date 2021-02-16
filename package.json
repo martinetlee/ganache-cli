@@ -9,7 +9,7 @@
 	"scripts": {
 		"update": "npm update ganache-core",
 		"start": "node cli.js",
-		"start-fork": "node cli.js --fork https://mainnet.infura.io/v3/$INFURA_KEY  -m 'luxury visual dentist trumpet banana immune that charge baby board finger pet' -u '0xb7f993e0b314148e02c105badb12b02b1143e704'",
+		"start-fork": "node cli.js --fork https://mainnet.infura.io/v3/$INFURA_PROJECT_ID  -m 'luxury visual dentist trumpet banana immune that charge baby board finger pet' -u '0xb7f993e0b314148e02c105badb12b02b1143e704'",
 		"build": "webpack-cli --config ./webpack/webpack.node.config.js",
 		"docker": "docker build -t trufflesuite/ganache-cli . && docker run -p 8545:8545 trufflesuite/ganache-cli",
 		"otp": "node ./scripts/generate-otp.js",
