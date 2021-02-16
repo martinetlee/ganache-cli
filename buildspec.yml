@@ -6,7 +6,11 @@ env:
 phases:
   install:
     runtime-versions:
+<<<<<<< HEAD
       docker: 18
+=======
+      docker: 19
+>>>>>>> 4ac34b8 (refined buildspec)
   pre_build:
     commands:
       - echo Logging into Amazon ECR
