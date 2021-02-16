@@ -4,13 +4,26 @@ This is a wrapper for Ganache-CLI for the GodMode environment pointing to GodMod
 
 For full information, check the [Ganache-CLI repo](https://github.com/trufflesuite/ganache-cli).
 
-### Usage
+# Usage
 
----
+Start by cloing this repository and installing dependencies
 
-1. Clone this repository and run `$ npm install`
+```
+npm install
+```
 
-2. Open a shell an run `$ npm run start`
+Run a local chain
+
+```
+npm run start
+```
+
+OR run a mainnet fork
+
+```
+export INFURA_PROJECT_ID=<your-infura-project-id>
+npm run start-fork
+```
 
 # License
 

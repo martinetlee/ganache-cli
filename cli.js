@@ -15,7 +15,8 @@ try {
 var to = ganache.to;
 var initArgs = require("./args")
 
-var detailedVersion = "Ganache CLI v" + pkg.version + " (ganache-core: " + ganache.version + ")";
+var gmDetailedVersion = "GodMode Ganache CLI v" + pkg.godmodeVersion;
+var detailedVersion = "Ganache CLI v" + pkg.version + " (godmode-ganache-core: " + ganache.version + ")";
 
 var isDocker = "DOCKER" in process.env && process.env.DOCKER.toLowerCase() === "true";
 var argv = initArgs(yargs, detailedVersion, isDocker).argv;
@@ -105,17 +106,16 @@ var options = {
 
 var server = ganache.server(options);
 
-console.log("=========================================================");
-console.log("Godmode Ganache v0.0.1");
-console.log("");
-console.log(" by Martinet Lee");
-console.log(" for ETHGlobal Hack The Money ");
-console.log("");
-console.log("=========================================================");
-console.log("");
-console.log("Based on: ");
+var header = `
+=========================================================
+${gmDetailedVersion}
 
-console.log(detailedVersion);
+ By XGM Studio
+ Based on ${detailedVersion}
+
+=========================================================
+`;
+console.log(header);
 
 let started = false;
 process.on("uncaughtException", function(e) {
