@@ -6,7 +6,7 @@ For full information, check the [Ganache-CLI repo](https://github.com/trufflesui
 
 # Usage
 
-Start by cloing this repository and installing dependencies
+Start by cloning this repository and installing dependencies
 
 ```
 npm install
